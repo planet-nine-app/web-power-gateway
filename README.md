@@ -8,7 +8,8 @@ So you want to add a Power gateway to your website. Well the process couldn't be
 
 If you want to use the standard banner-style Power gateway simply add the following to your website:
 
-```<div id="pn-gateway-banner">
+```
+  <div id="pn-gateway-banner">
     <img src="https://www.plnet9.com/gateway-banner.png" id="pn-gateway-image">
     <button id="pn-gateway-button" gatewayName="YOUR GATEWAY NAME" partnerName="YOUR PARTNER NAME" totalPower="THE DESIRED POWER AMOUNT">
       <div id="button-container">
@@ -42,7 +43,8 @@ This will add the banner button to your website and initialize it to handle Powe
 
 If the banner button isn't your jam, it's easy to add a Power gateway button with no styling that you can style to your heart's content. To do that, just add the following to your HTML:
 
-```<button id="pn-gateway-button" gatewayName="YOUR GATEWAY NAME" partnerName="YOUR PARTNER NAME" totalPower="THE DESIRED POWER AMOUNT">
+```
+<button id="pn-gateway-button" gatewayName="YOUR GATEWAY NAME" partnerName="YOUR PARTNER NAME" totalPower="THE DESIRED POWER AMOUNT">
 </button>
   <script src="https://www.plnet9.com/gateway.js"></script>
   <script type="text/javascript">
