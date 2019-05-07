@@ -59,3 +59,15 @@ If the banner button isn't your jam, it's easy to add a Power gateway button wit
 ```
 
 You'll need to add your gatewayName, partnerName, and totalPower just as above. And of course don't forget to fill out the code for what happens when the transaction succeeds. 
+
+### How The Power Gateway Works
+
+`gateway.js` handles the heavy lifting for the Power gateway. It looks for a DOM element that handles "click" events called "pn-gatewqy-button". It then looks for the inclusion of the "pn-gateway-banner" DOM element. If it finds the banner it'll style all the elements, if not it leaves the styling to you. After styling, it sets an eventListener for the "click" event on the "pn-gateway-button" element. That click event redirects the user to the Planet Nine app to prompt them for approval. 
+
+By default on approval, the Power gateway comes back to the url that is `window.location.href` of the sending website. If another url is necessary you can add the optional `gatewayURL` attribute to the "pn-gateway-button" element.
+
+`gateway.js` creates a PNGateway object with a speciall "callback" property defined. Setting this property is what will get `gateway.js` to process your transaction. The timing on that processing is thus left to the implementor. If you implement as in the examples above, the processing will happen right away. If you want the page to load first then set the callback property in an onLoad listener. 
+
+Once `callback` is set, `gateway.js` will process your transaction and call the callback you've set with two arguments. The first is the error object which will be null on a successful transaction. The second is the response which will be the user object of the user who did the transaction. You can use this information to display user info like their amount of Power, or you can ignore this completely.
+
+And that's it. Hopefully you find that implementing a Power gateway is easy and fun, if not let us know so we can improve. 
