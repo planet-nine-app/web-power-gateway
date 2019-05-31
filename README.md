@@ -4,6 +4,9 @@ So you want to add a Power gateway to your website. Well the process couldn't be
 
 ### Adding a Power Gateway To Your Website
 
+##### Note
+Please note that Power transactions must be at least 200 Power. Anything less than that will be rejected by the server.
+
 ##### The Banner Button
 
 If you want to use the standard banner-style Power gateway simply add the following to your website:
