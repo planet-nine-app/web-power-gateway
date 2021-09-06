@@ -1,0 +1,23 @@
+{
+  "name": "web-power-gateway",
+  "version": "1.0.0",
+  "description": "So you want to add a Power gateway to your website. Well the process couldn't be easier (please if you think of something easier, let us know). Included in this repo are the two example files to lead you on your way. The `gateway.js` file here is the same as the one you'll get from https://www.plnet9.com/gateway.js, and `index.html` is an example html file to guide your implementation. Without further ado, here's how you add a Power gateway to your website.",
+  "main": "gateway.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/planet-nine-app/web-power-gateway.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/planet-nine-app/web-power-gateway/issues"
+  },
+  "homepage": "https://github.com/planet-nine-app/web-power-gateway#readme",
+  "dependencies": {
+    "browserify": "^17.0.0",
+    "superagent": "^6.1.0"
+  }
+}

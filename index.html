@@ -21,7 +21,7 @@
   Pay 250 Power to get rid of me.</h3>
   <div id="pn-gateway-banner">
     <img src="https://www.plnet9.com/gateway-banner.png" id="pn-gateway-image">
-    <button id="pn-gateway-button" gatewayName="foo-bar-baz-bop" partnerName="cool-tray-five" totalPower="400">
+    <button id="pn-gateway-button" partnerDisplayName="Test Gateway" partnerName="team-planet-nine" totalPower="400" description="For testing purposes.">
       <div id="button-container">
         <span id="button-text">USE POWER</span>
         <span id="button-vertical-bar"></span>
@@ -30,8 +30,9 @@
     </button>
   </div>
   <div id="log">Waiting...
-  <!-- <script src="http://localhost:3000/gateway.js"></script> -->
-  <script src="https://www.plnet9.com/gateway.js"></script>
+  <!--script src="http://localhost:8000/gateway.js"></script-->
+  <script src="http://192.168.0.9:8000/gateway.js"></script> 
+  <!--script src="https://www.plnet9.com/gateway.js"></script-->
   <script type="text/javascript">
     PNGateway.callback = function(err, resp) {
       if(err) {
