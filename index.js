@@ -23,7 +23,7 @@ function setStyles() {
   gatewayBanner.style.cssText = 'width: 100%; position: relative';
   document.getElementById('pn-gateway-image').style.cssText = 'width: 100%; height: auto';
   gatewayButton.style.cssText = 'background-color: #429691; border: none; font-size: 2.5vw; color: #F5DACB; position: absolute; right: 4.1%; top: 25.55%; width: 36.14%; height: 41.10%; border-radius: 31.645px';
-  document.getElementById('button-text').style.cssText = 'font-family: Orbitron, sans-serif; font-weight: bold;float: left;padding-left: 8.85%;padding-top: 1.6%';
+  document.getElementById('button-text').style.cssText = 'font-family: Ubuntu, sans-serif; font-weight: bold;float: left;padding-left: 8.85%;';
   document.getElementById('button-vertical-bar').style.cssText = 'width: 1px;height: 66.7%;background: #F5DACB;position: absolute;left: 69.5%;top: 16.5%';
   document.getElementById('button-total-power').style.cssText = 'font-family: Ubuntu, sans-serif; font-weight: bold;float: right;padding-right: 8.85%';
 
