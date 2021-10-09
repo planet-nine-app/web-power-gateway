@@ -19,19 +19,29 @@
 
   <h3 id="ad">I AM AN ANNOYING AD<br>
   Pay 250 Power to get rid of me.</h3>
-  <div id="pn-gateway-banner">
-    <img src="https://www.plnet9.com/gateway-banner.png" id="pn-gateway-image">
-    <button id="pn-gateway-button" partnerDisplayName="Test Gateway" partnerName="team-planet-nine" totalPower="400" description="For testing purposes.">
-      <div id="button-container">
-        <span id="button-text">USE POWER</span>
-        <span id="button-vertical-bar"></span>
-        <span id="button-total-power"></span>
+  <div class="pn-gateway-banner">
+    <img src="https://www.plnet9.com/gateway-banner.png" class="pn-gateway-image">
+    <button class="pn-gateway-button" partnerDisplayName="Test Gateway" partnerName="team-planet-nine" totalPower="400" description="For testing purposes.">
+      <div class="button-container">
+        <span class="button-text">USE POWER</span>
+        <span class="button-vertical-bar"></span>
+        <span class="button-total-power"></span>
+      </div>
+    </button>
+  </div>
+  <div class="pn-gateway-banner">
+    <img src="https://www.plnet9.com/gateway-banner.png" class="pn-gateway-image">
+    <button class="pn-gateway-button" partnerDisplayName="Test Gateway 2" partnerName="team-planet-nine-2" totalPower="400" description="For testing purposes.">
+      <div class="button-container">
+        <span class="button-text">USE POWER 2</span>
+        <span class="button-vertical-bar"></span>
+        <span class="button-total-power"></span>
       </div>
     </button>
   </div>
   <div id="log">Waiting...
   <!--script src="http://localhost:8000/gateway.js"></script-->
-  <script src="http://192.168.0.9:8000/gateway.js"></script> 
+  <script src="./gateway.js"></script> 
   <!--script src="https://www.plnet9.com/gateway.js"></script-->
   <script type="text/javascript">
     PNGateway.callback = function(err, resp) {
