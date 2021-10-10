@@ -3,20 +3,13 @@ window.PNGateway = {};
 // replaced 
 let gatewayButton = document.getElementsByClassName('pn-gateway-button');
 let gatewayBanner = document.getElementsByClassName('pn-gateway-banner');
-let partnerDisplayName = document.getElementsByClassName('partnerDisplayName');
-let partnerName = document.getElementsByClassName('partnerName');
-let totalPower = document.getElementsByClassName('totalPower');
-let description = document.getElementsByClassName('description');
+let totalPower = "test";
+
 // Added variables here **remove comment after code review**
 let pnGatewayImage = document.getElementsByClassName("pn-gateway-image")
 let buttonText = document.getElementsByClassName("button-text")
 let buttonVerticalBar = document.getElementsByClassName("button-vertical-bar")
 let buttonTotalPower = document.getElementsByClassName("button-total-power")
-
-PNGateway.partnerDisplayName = partnerDisplayName;
-PNGateway.partnerName = partnerName;
-PNGateway.totalPower = totalPower;
-PNGateway.description = description;
 
 function setStyles() {
   if(!gatewayBanner) {
@@ -37,8 +30,8 @@ function setStyles() {
   }
 
   for (let item of gatewayButton) {
-    item.style.cssText = 'background-color: #429691; border: none; font-size: 2.5vw; color: #F5DACB; position: absolute; right: 4.1%; top: 25.55%; width: 36.14%; height: 41.10%; border-radius: 31.645px';
-    console.log(item.textContent)
+    item.style.cssText = 'background-color: #429691; border: none; font-size: 2.5vw; color: #F5DACB; position: absolute; right: 4.1%; top: 25.55%; width: 36.14%; height: 41.10%; border-radius: 31.645px'
+  
   } 
 
   for (let item of buttonText) {
@@ -50,10 +43,9 @@ for (let item of buttonVerticalBar) {
 }
 for (let item of buttonTotalPower) {
   item.style.cssText = 'font-family: Ubuntu, sans-serif; font-weight: bold;float: right;padding-right: 8.85%';
+  item.textContent = item.parentElement.parentElement.getAttribute('totalPower')
 }
 
-// button total power not displaying currently
-  document.getElementsByClassName('button-total-power').textContent = totalPower;
 };
 setStyles();
 
@@ -62,6 +54,14 @@ function setButtonDisplayText() {
 setButtonDisplayText();
 
 for (let item of gatewayButton) {
+  let partnerDisplayName = item.getAttribute('partnerDisplayName');
+  let partnerName = item.getAttribute('partnerName');
+  let totalPower = item.getAttribute('totalPower');
+  let description = item.getAttribute('description');
+  PNGateway.partnerDisplayName = partnerDisplayName;
+  PNGateway.partnerName = partnerName;
+  PNGateway.totalPower = totalPower;
+  PNGateway.description = description;
   item.addEventListener('click', function(evt) {
     item.style.backgroundColor = 'white';
     item.style.color = '#5AC4BD';
