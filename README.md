@@ -12,13 +12,13 @@ Please note that Power transactions must be at least 200 Power. Anything less th
 If you want to use the standard banner-style Power gateway simply add the following to your website:
 
 ```
-  <div id="pn-gateway-banner">
-    <img src="https://www.plnet9.com/gateway-banner.png" id="pn-gateway-image">
-    <button id="pn-gateway-button" partnerDisplayName="YOUR PARTNER DISPLAY NAME" partnerName="YOUR PARTNER NAME" totalPower="THE DESIRED POWER AMOUNT" description="OPTIONAL DESCRIPTION">
-      <div id="button-container">
-        <span id="button-text">USE POWER</span>
-        <span id="button-vertical-bar"></span>
-        <span id="button-total-power">THE DESIRED POWER AMOUNT</span>
+  <div class="pn-gateway-banner">
+    <img src="https://www.plnet9.com/gateway-banner.png" class="pn-gateway-image">
+    <button class="pn-gateway-button" partnerDisplayName="YOUR PARTNER DISPLAY NAME" partnerName="YOUR PARTNER NAME" totalPower="THE DESIRED POWER AMOUNT" description="OPTIONAL DESCRIPTION">
+      <div class="button-container">
+        <span class="button-text">USE POWER</span>
+        <span class="button-vertical-bar"></span>
+        <span class="button-total-power">THE DESIRED POWER AMOUNT</span>
       </div>
     </button>
   </div>
@@ -49,7 +49,7 @@ This will add the banner button to your website and initialize it to handle Powe
 If the banner button isn't your jam, it's easy to add a Power gateway button with no styling that you can style to your heart's content. To do that, just add the following to your HTML:
 
 ```
-<button id="pn-gateway-button" partnerDisplayName="YOUR PARTNER DISPLAY NAME" partnerName="YOUR PARTNER NAME" totalPower="THE DESIRED POWER AMOUNT" description="OPTIONAL DESCRIPTION">
+<button class="pn-gateway-button" partnerDisplayName="YOUR PARTNER DISPLAY NAME" partnerName="YOUR PARTNER NAME" totalPower="THE DESIRED POWER AMOUNT" description="OPTIONAL DESCRIPTION">
 </button>
   <script src="https://www.plnet9.com/gateway.js"></script>
   <script type="text/javascript">
