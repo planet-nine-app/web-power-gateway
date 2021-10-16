@@ -15,36 +15,62 @@ function setStyles() {
   if(!gatewayBanner) {
     return;
   }
-  var match = window.matchMedia("(max-width: 720px)");
+  var match = window.matchMedia("(max-width: 768px)");
   if(!match.matches) {
     for (let item of gatewayBanner) {
       item.style.cssText = 'display: none';
     }
-  }
-  for (let item of gatewayBanner) {
-    item.style.cssText = 'width: 100%; position: relative';
-  }
-
-  for (let item of pnGatewayImage) {
-  item.style.cssText = 'width: 100%; height: auto'
-  }
-
-  for (let item of gatewayButton) {
-    item.style.cssText = 'background-color: #429691; border: none; font-size: 2.5vw; color: #F5DACB; position: absolute; right: 4.1%; top: 25.55%; width: 36.14%; height: 41.10%; border-radius: 31.645px'
+    for (let item of gatewayBanner) {
+      item.style.cssText = 'width: 100%; position: relative';
+    }
   
-  } 
+    for (let item of pnGatewayImage) {
+    item.style.cssText = 'width: 100%; height: auto'
+    }
+  
+    for (let item of gatewayButton) {
+      item.style.cssText = 'background-color: #429691; border: none; font-size: 1.25vw; color: #F5DACB; position: absolute; right: 4.1%; top: 25.55%; width: 36.14%; height: 41.10%; border-radius: 31.645px'
+    } 
+  
+    for (let item of buttonText) {
+      item.style.cssText = 'ont-family: Ubuntu, sans-serif; font-weight: bold;float: left;padding-left: 8.85%'
+    }
+  
+    for (let item of buttonVerticalBar) {
+      item.style.cssText = 'width: 1px;height: 66.7%;background: #F5DACB;position: absolute;left: 69.5%;top: 16.5%';
+    }
+    for (let item of buttonTotalPower) {
+      item.style.cssText = 'font-family: Ubuntu, sans-serif; font-weight: bold;float: right;padding-right: 8.85%';
+      item.textContent = item.parentElement.parentElement.getAttribute('totalPower')
+    }
 
-  for (let item of buttonText) {
-    item.style.cssText = 'ont-family: Ubuntu, sans-serif; font-weight: bold;float: left;padding-left: 8.85%'
   }
-
-for (let item of buttonVerticalBar) {
-  item.style.cssText = 'width: 1px;height: 66.7%;background: #F5DACB;position: absolute;left: 69.5%;top: 16.5%';
-}
-for (let item of buttonTotalPower) {
-  item.style.cssText = 'font-family: Ubuntu, sans-serif; font-weight: bold;float: right;padding-right: 8.85%';
-  item.textContent = item.parentElement.parentElement.getAttribute('totalPower')
-}
+ 
+  else {
+    for (let item of gatewayBanner) {
+      item.style.cssText = 'width: 100%; position: relative';
+    }
+  
+    for (let item of pnGatewayImage) {
+    item.style.cssText = 'width: 100%; height: auto'
+    }
+  
+    for (let item of gatewayButton) {
+      item.style.cssText = 'background-color: #429691; border: none; font-size: 2.5vw; color: #F5DACB; position: absolute; right: 4.1%; top: 25.55%; width: 36.14%; height: 41.10%; border-radius: 31.645px'
+    } 
+  
+    for (let item of buttonText) {
+      item.style.cssText = 'ont-family: Ubuntu, sans-serif; font-weight: bold;float: left;padding-left: 8.85%'
+    }
+  
+    for (let item of buttonVerticalBar) {
+      item.style.cssText = 'width: 1px;height: 66.7%;background: #F5DACB;position: absolute;left: 69.5%;top: 16.5%';
+    }
+    for (let item of buttonTotalPower) {
+      item.style.cssText = 'font-family: Ubuntu, sans-serif; font-weight: bold;float: right;padding-right: 8.85%';
+      item.textContent = item.parentElement.parentElement.getAttribute('totalPower')
+    }
+  }
 
 };
 setStyles();
