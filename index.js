@@ -1,11 +1,10 @@
+let superagent = require('superagent');
 window.PNGateway = {};
 
-// replaced 
 let gatewayButton = document.getElementsByClassName('pn-gateway-button');
 let gatewayBanner = document.getElementsByClassName('pn-gateway-banner');
 let totalPower = "test";
 
-// Added variables here **remove comment after code review**
 let pnGatewayImage = document.getElementsByClassName("pn-gateway-image")
 let buttonText = document.getElementsByClassName("button-text")
 let buttonVerticalBar = document.getElementsByClassName("button-vertical-bar")
@@ -88,6 +87,7 @@ for (let item of gatewayButton) {
   PNGateway.partnerName = partnerName;
   PNGateway.totalPower = totalPower;
   PNGateway.description = description;
+  let returnURL = window.location.href.split("?")[0];
   item.addEventListener('click', function(evt) {
     item.style.backgroundColor = 'white';
     item.style.color = '#5AC4BD';
@@ -96,7 +96,7 @@ for (let item of gatewayButton) {
    const path = 'https://www.plnet9.com/spend?partnerName=' + partnerName + 
        '&totalPower=' + totalPower + '&' +
        'partnerDisplayName=' + encodeURIComponent(partnerDisplayName) + '&description=' +
-       encodeURIComponent(description) + '&gatewayurl=' + window.location.href;
+       encodeURIComponent(description) + '&gatewayurl=' + returnURL + '&handoff=true';
      window.location.href = path;
   });
 }
@@ -122,9 +122,23 @@ Object.defineProperty(PNGateway, 'callback', {
     if(Object.keys(params).length === 0) {
       return;
     }
-    const success = params.success;
-    if(success && success !== 'false') {
-      return callback(null, success); 
+    const userUUID = params.userUUID;
+    const ordinal = params.ordinal;
+    const timestamp = params.timestamp;
+    const signature = params.signature;
+    if(userUUID && ordinal && timestamp && signature) {
+      superagent.put(`https://api.plnet9.com/gateway/power`)
+        .send({
+          userUUID: userUUID,
+          totalPower: PNGateway.totalPower,
+          partnerName: PNGateway.partnerName,
+          ordinal: ordinal,
+          description: PNGateway.description,
+          timestamp: timestamp,
+          signature: signature
+        })
+        .end(callback); 
+      return;
     }
     callback(new Error('Failed spend'));
   }
