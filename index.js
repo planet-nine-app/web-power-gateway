@@ -130,9 +130,9 @@ Object.defineProperty(PNGateway, 'callback', {
       superagent.put(`https://api.plnet9.com/gateway/power`)
         .send({
           userUUID: userUUID,
-          totalPower: PNGateway.totalPower,
+          totalPower: +PNGateway.totalPower,
           partnerName: PNGateway.partnerName,
-          ordinal: ordinal,
+          ordinal: +ordinal,
           description: PNGateway.description,
           timestamp: timestamp,
           signature: signature
